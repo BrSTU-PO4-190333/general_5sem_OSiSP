@@ -13,18 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\GameSocoban">
+      <UniqueIdentifier>{8278726f-11a3-4c91-9652-028b7b4b228b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameSokoban.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\GameSokoban\GameSokoban.cpp">
+      <Filter>Source Files\GameSocoban</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameSokoban.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\GameSokoban\GameSokoban.hpp">
+      <Filter>Source Files\GameSocoban</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

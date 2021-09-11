@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3b5b5999-0c36-4c6d-b1e2-b164aa88b880}</ProjectGuid>
-    <RootNamespace>Sokoban</RootNamespace>
+    <ProjectGuid>{46d62a40-4850-4825-bae1-273262940399}</ProjectGuid>
+    <RootNamespace>SokobanConsoleApp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,11 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GameSokoban.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\GameSokoban\GameSokoban.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameSokoban.hpp" />
+    <ClInclude Include="src\GameSokoban\GameSokoban.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
