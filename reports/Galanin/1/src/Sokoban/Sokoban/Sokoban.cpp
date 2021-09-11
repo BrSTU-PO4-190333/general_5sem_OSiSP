@@ -22,6 +22,7 @@ int main()
     generateEmptyMap();
     generateBorder();
     map[X][Y] = '@';
+    map[4][4] = '#';
     while (1)
     {
         system("cls");
@@ -85,43 +86,55 @@ void printPerson()
 void goRight()
 {
     printf("right");
-    if (X != sizeX - 1 - 1)
+    if (X != sizeX - 1)
     {
-        X += 1;
-        map[Y][X - 1] = '.';
-        printPerson();
+        if (map[Y][X + 1] != '#')
+        {
+            X += 1;
+            map[Y][X - 1] = '.';
+            printPerson();
+        }
     }
 }
 
 void goLeft()
 {
     printf("left");
-    if (X != 1)
+    if (X != 0)
     {
-        X -= 1;
-        map[Y][X + 1] = '.';
-        printPerson();
+        if (map[Y][X - 1] != '#')
+        {
+            X -= 1;
+            map[Y][X + 1] = '.';
+            printPerson();
+        }
     }
 }
 
 void goTop()
 {
     printf("top");
-    if (Y != 1)
+    if (Y != 0)
     {
-        Y -= 1;
-        map[Y + 1][X] = '.';
-        printPerson();
+        if (map[Y - 1][X] != '#')
+        {
+            Y -= 1;
+            map[Y + 1][X] = '.';
+            printPerson();
+        }
     }
 }
 
 void goBottom()
 {
     printf("bottom");
-    if (Y != sizeY - 1 - 1)
+    if (Y != sizeY - 1)
     {
-        Y += 1;
-        map[Y - 1][X] = '.';
-        printPerson();
+        if (map[Y + 1][X] != '#')
+        {
+            Y += 1;
+            map[Y - 1][X] = '.';
+            printPerson();
+        }
     }
 }
