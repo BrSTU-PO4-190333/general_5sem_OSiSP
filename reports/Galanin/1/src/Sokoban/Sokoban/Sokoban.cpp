@@ -1,3 +1,8 @@
+// '@' - Player cell
+// '#' - Wall cell
+// '*' - Cell with box
+// '.' - Empty cell
+
 #include <iostream>
 #include <conio.h>
 using namespace std;
@@ -23,6 +28,7 @@ int main()
     generateBorder();
     map[X][Y] = '@';
     map[4][4] = '#';
+    map[4][5] = '*';
     while (1)
     {
         system("cls");
@@ -88,11 +94,26 @@ void goRight()
     printf("right");
     if (X != sizeX - 1)
     {
+        if (map[Y][X + 1] == '*' && map[Y][X + 2] == '.')
+        {
+            X += 1;
+            map[Y][X - 1] = '.';
+            printPerson();
+            map[Y][X + 1] = '*';
+            return;
+        }
+
+        if (map[Y][X + 1] == '*' && map[Y][X + 2] == '#')
+        {
+            return;
+        }
+
         if (map[Y][X + 1] != '#')
         {
             X += 1;
             map[Y][X - 1] = '.';
             printPerson();
+            return;
         }
     }
 }
@@ -102,11 +123,26 @@ void goLeft()
     printf("left");
     if (X != 0)
     {
+        if (map[Y][X - 1] == '*' && map[Y][X - 2] == '.')
+        {
+            X -= 1;
+            map[Y][X + 1] = '.';
+            printPerson();
+            map[Y][X - 1] = '*';
+            return;
+        }
+
+        if (map[Y][X - 1] == '*' && map[Y][X - 2] == '#')
+        {
+            return;
+        }
+
         if (map[Y][X - 1] != '#')
         {
             X -= 1;
             map[Y][X + 1] = '.';
             printPerson();
+            return;
         }
     }
 }
@@ -116,6 +152,20 @@ void goTop()
     printf("top");
     if (Y != 0)
     {
+        if (map[Y - 1][X] == '*' && map[Y - 2][X] == '.')
+        {
+            Y -= 1;
+            map[Y + 1][X] = '.';
+            printPerson();
+            map[Y - 1][X] = '*';
+            return;
+        }
+
+        if (map[Y - 1][X] == '*' && map[Y - 2][X] == '#')
+        {
+            return;
+        }
+
         if (map[Y - 1][X] != '#')
         {
             Y -= 1;
@@ -130,11 +180,26 @@ void goBottom()
     printf("bottom");
     if (Y != sizeY - 1)
     {
+        if (map[Y + 1][X] == '*' && map[Y + 2][X] == '.')
+        {
+            Y += 1;
+            map[Y - 1][X] = '.';
+            printPerson();
+            map[Y + 1][X] = '*';
+            return;
+        }
+
+        if (map[Y + 1][X] == '*' && map[Y + 2][X] == '#')
+        {
+            return;
+        }
+
         if (map[Y + 1][X] != '#')
         {
             Y += 1;
             map[Y - 1][X] = '.';
             printPerson();
+            return;
         }
     }
 }
