@@ -1,70 +1,31 @@
-// '@' - Player cell
-// '#' - Wall cell
-// '*' - Cell with box
-// '.' - Empty cell
+#include "GameSokoban.hpp"
 
-#include <iostream>
-#include <conio.h>
-using namespace std;
-
-const int sizeX = 15;
-const int sizeY = 15;
-char map[sizeY][sizeX];
-int X = 1;
-int Y = 1;
-int counter = -1;
-
-void generateEmptyMap();
-void generateBorder();
-void printMap();
-void printPerson();
-void goLeft();
-void goRight();
-void goTop();
-void goBottom();
-
-int main()
+GameSokoban::GameSokoban()
 {
+    map = new char* [sizeY];
+    for (int i = 0; i < sizeY; i++)
+    {
+        map[i] = new char[sizeX];
+    }
+
     generateEmptyMap();
     generateBorder();
     printPerson();
     map[X][Y] = '@';
     map[4][4] = '#';
     map[4][5] = '*';
-    while (1)
-    {
-        system("cls");
-        printMap();
-        int ch = _getch();
-        switch (ch)
-        {
-            case 'w':
-            case 'W':
-                goTop();
-                break;
-
-            case 'd':
-            case 'D':
-                goRight();
-                break;
-
-            case 's':
-            case 'S':
-                goBottom();
-                break;
-
-            case 'a':
-            case 'A':
-                goLeft();
-                break;
-
-            default:
-                break;
-        }
-    }
 }
 
-void generateEmptyMap()
+GameSokoban::~GameSokoban()
+{
+    for (int i = 0; i < sizeY; i++)
+    {
+        delete[] map[i];
+    }
+    delete[] map;
+}
+
+void GameSokoban::generateEmptyMap()
 {
     for (int i = 0; i < sizeY; i++)
     {
@@ -75,7 +36,7 @@ void generateEmptyMap()
     }
 }
 
-void generateBorder()
+void GameSokoban::generateBorder()
 {
     for (int i = 0; i < sizeY; i++)
     {
@@ -90,7 +51,7 @@ void generateBorder()
     }
 }
 
-void printMap()
+void GameSokoban::printMap()
 {
     printf("Steps: %d\n", counter);
     for (int i = 0; i < sizeY; i++)
@@ -103,13 +64,13 @@ void printMap()
     }
 }
 
-void printPerson()
+void GameSokoban::printPerson()
 {
     map[Y][X] = '@';
     counter += 1;
 }
 
-void goRight()
+void GameSokoban::goRight()
 {
     printf("right");
     if (X != sizeX - 1)
@@ -138,7 +99,7 @@ void goRight()
     }
 }
 
-void goLeft()
+void GameSokoban::goLeft()
 {
     printf("left");
     if (X != 0)
@@ -167,7 +128,7 @@ void goLeft()
     }
 }
 
-void goTop()
+void GameSokoban::goTop()
 {
     printf("top");
     if (Y != 0)
@@ -195,7 +156,7 @@ void goTop()
     }
 }
 
-void goBottom()
+void GameSokoban::goBottom()
 {
     printf("bottom");
     if (Y != sizeY - 1)
