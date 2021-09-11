@@ -12,6 +12,7 @@ const int sizeY = 15;
 char map[sizeY][sizeX];
 int X = 1;
 int Y = 1;
+int counter = -1;
 
 void generateEmptyMap();
 void generateBorder();
@@ -26,6 +27,7 @@ int main()
 {
     generateEmptyMap();
     generateBorder();
+    printPerson();
     map[X][Y] = '@';
     map[4][4] = '#';
     map[4][5] = '*';
@@ -33,15 +35,31 @@ int main()
     {
         system("cls");
         printMap();
-        printPerson();
         int ch = _getch();
         switch (ch)
         {
-        case 'd': goRight(); break;
-        case 'a': goLeft(); break;
-        case 's': goBottom(); break;
-        case 'w': goTop(); break;
-        default: printf("q");
+            case 'w':
+            case 'W':
+                goTop();
+                break;
+
+            case 'd':
+            case 'D':
+                goRight();
+                break;
+
+            case 's':
+            case 'S':
+                goBottom();
+                break;
+
+            case 'a':
+            case 'A':
+                goLeft();
+                break;
+
+            default:
+                break;
         }
     }
 }
@@ -74,6 +92,7 @@ void generateBorder()
 
 void printMap()
 {
+    printf("Steps: %d\n", counter);
     for (int i = 0; i < sizeY; i++)
     {
         for (int j = 0; j < sizeX; j++)
@@ -87,6 +106,7 @@ void printMap()
 void printPerson()
 {
     map[Y][X] = '@';
+    counter += 1;
 }
 
 void goRight()
