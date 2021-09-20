@@ -6,7 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->label = new QLabel(this);
+
+    this->setFixedSize(this->WinWidth, this->WinHeight);
 }
 
 MainWindow::~MainWindow()
@@ -16,16 +17,41 @@ MainWindow::~MainWindow()
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
 {
-    if(e->key() == Qt::Key_Up || e->key() == Qt::Key_W) {
-        this->label->setText("up");
+    if(e->key() == Qt::Key_Up || e->key() == Qt::Key_W)
+    {
+
     }
-    else if(e->key() == Qt::Key_Right || e->key() == Qt::Key_D) {
-        this->label->setText("right");
+    else if(e->key() == Qt::Key_Right || e->key() == Qt::Key_D)
+    {
+
     }
-    else if(e->key() == Qt::Key_Down || e->key() == Qt::Key_S) {
-        this->label->setText("down");
+    else if(e->key() == Qt::Key_Down || e->key() == Qt::Key_S)
+    {
+
     }
-    else if(e->key() == Qt::Key_Left || e->key() == Qt::Key_A) {
-        this->label->setText("left");
+    else if(e->key() == Qt::Key_Left || e->key() == Qt::Key_A)
+    {
+
+    }
+}
+
+void MainWindow::paintEvent(QPaintEvent *event)
+{
+    Q_UNUSED(event);
+    QPainter painter(this);
+    this->drawAxes(&painter);
+}
+
+void MainWindow::drawAxes(QPainter *painter)
+{
+    int x = this->WinWidth / this->length;
+    int y = this->WinHeight / this->length;
+    for (int i = 0; i < this->length; i += 1)
+    {
+        for (int j = 0; j < this->length; j += 1)
+        {
+            QRect rect(x*i, y*j, x, y);
+            painter->drawRect(rect);
+        }
     }
 }
