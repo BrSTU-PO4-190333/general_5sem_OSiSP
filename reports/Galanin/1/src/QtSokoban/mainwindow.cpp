@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     this->setFixedSize(this->WinWidth, this->WinHeight);
+    this->Make1Level();
 }
 
 MainWindow::~MainWindow()
@@ -40,6 +41,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
     QPainter painter(this);
     this->drawAxes(&painter);
+    this->drawTextures(&painter);
 }
 
 void MainWindow::drawAxes(QPainter *painter)
@@ -52,6 +54,29 @@ void MainWindow::drawAxes(QPainter *painter)
         {
             QRect rect(x*i, y*j, x, y);
             painter->drawRect(rect);
+        }
+    }
+}
+
+void MainWindow::drawTextures(QPainter *painter)
+{
+    int x = this->WinWidth / this->length;
+    int y = this->WinHeight / this->length;
+    for (int i = 0; i < this->length; i += 1)
+    {
+        for (int j = 0; j < this->length; j += 1)
+        {
+            QString path = ":/img/_pics/err.png";
+            if (this->map[i][j] == floor)
+            {
+                path = ":/img/_pics/floor.png";
+            }
+            else if (this->map[i][j] == wall)
+            {
+                path = ":/img/_pics/wall.png";
+            }
+            QPixmap pixmap(path);
+            painter->drawPixmap(x*i, y*j, x, y, pixmap);
         }
     }
 }
