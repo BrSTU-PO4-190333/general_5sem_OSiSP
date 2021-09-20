@@ -75,6 +75,10 @@ void MainWindow::drawTextures(QPainter *painter)
             {
                 path = ":/img/_pics/wall.png";
             }
+            else if (this->map[i][j] == player)
+            {
+                path = ":/img/_pics/player.png";
+            }
             QPixmap pixmap(path);
             painter->drawPixmap(x*i, y*j, x, y, pixmap);
         }

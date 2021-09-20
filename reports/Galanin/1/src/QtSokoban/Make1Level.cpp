@@ -23,6 +23,8 @@ void MainWindow::Make1Level()
         this->map[this->length-1][j] = wall;
     }
 
+    this->map[9][11] = player;
+
     this->map[5][7] = wall;
     this->map[6][7] = wall;
     this->map[7][7] = wall;

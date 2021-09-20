@@ -34,8 +34,9 @@ private:
     const int WinHeight = 500;
     enum MapChar {
         err,
-        floor,
         wall,
+        floor,
+        player,
     } map[LENGTH][LENGTH];
 };
 #endif // MAINWINDOW_H
