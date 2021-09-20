@@ -79,6 +79,14 @@ void MainWindow::drawTextures(QPainter *painter)
             {
                 path = ":/img/_pics/player.png";
             }
+            else if (this->map[i][j] == box)
+            {
+                path = ":/img/_pics/box.png";
+            }
+            else if (this->map[i][j] == finish)
+            {
+                path = ":/img/_pics/finish.png";
+            }
             QPixmap pixmap(path);
             painter->drawPixmap(x*i, y*j, x, y, pixmap);
         }

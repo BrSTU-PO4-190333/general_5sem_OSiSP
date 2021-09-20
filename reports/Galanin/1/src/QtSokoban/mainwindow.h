@@ -37,6 +37,8 @@ private:
         wall,
         floor,
         player,
+        box,
+        finish,
     } map[LENGTH][LENGTH];
 };
 #endif // MAINWINDOW_H

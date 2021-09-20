@@ -25,6 +25,12 @@ void MainWindow::Make1Level()
 
     this->map[9][11] = player;
 
+    this->map[8][9] = box;
+    this->map[7][11] = box;
+
+    this->map[6][9] = finish;
+    this->map[6][10] = finish;
+
     this->map[5][7] = wall;
     this->map[6][7] = wall;
     this->map[7][7] = wall;
