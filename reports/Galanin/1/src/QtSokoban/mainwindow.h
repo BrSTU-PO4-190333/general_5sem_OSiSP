@@ -7,6 +7,7 @@
 #include <QPainter>
 #include <QRect>
 #include <QPixmap>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,6 +16,9 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
+public slots:
+    void animate();
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -38,7 +42,13 @@ private:
         floor,
         player,
         box,
-        finish,
     } map[LENGTH][LENGTH];
+    enum MapFinish {
+        noFinish,
+        finish,
+    } finishMap[LENGTH][LENGTH];
+
+    int xPlayer = 9;
+    int yPlayer = 11;
 };
 #endif // MAINWINDOW_H
