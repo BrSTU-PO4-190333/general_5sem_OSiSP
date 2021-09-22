@@ -8,6 +8,7 @@
 #include <QRect>
 #include <QPixmap>
 #include <QTimer>
+#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,6 +31,7 @@ protected:
     void paintEvent(QPaintEvent* event) override;
     void drawAxes(QPainter* painter);
     void drawTextures(QPainter* painter);
+    void sayWon();
 
 private:
     Ui::MainWindow *ui;

@@ -110,6 +110,19 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
                 return;
             }
 
+            // player -> finBox    -> floor
+            // floor  -> finPlayer -> box
+            if (f0 == player && f1 == finBox && f2 == floor)
+            {
+                this->yPlayer -= 1;
+
+                this->map[this->xPlayer][this->yPlayer + 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = finPlayer;
+                this->map[this->xPlayer][this->yPlayer - 1] = box;
+
+                return;
+            }
+
             // finPlayer -> finBox    -> floor
             // finish    -> finPlayer -> box
             if (f0 == finPlayer && f1 == finBox && f2 == floor)
@@ -385,6 +398,19 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
                 return;
             }
 
+            // player -> finBox    -> floor
+            // floor  -> finPlayer -> box
+            if (f0 == player && f1 == finBox && f2 == floor)
+            {
+                this->yPlayer += 1;
+
+                this->map[this->xPlayer][this->yPlayer - 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = finPlayer;
+                this->map[this->xPlayer][this->yPlayer + 1] = box;
+
+                return;
+            }
+
             // finPlayer -> finBox    -> floor
             // finish    -> finPlayer -> box
             if (f0 == finPlayer && f1 == finBox && f2 == floor)
@@ -529,6 +555,19 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
                 return;
             }
 
+            // player -> finBox    -> floor
+            // floor  -> finPlayer -> box
+            if (f0 == player && f1 == finBox && f2 == floor)
+            {
+                this->xPlayer -= 1;
+
+                this->map[this->xPlayer + 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = finPlayer;
+                this->map[this->xPlayer - 1][this->yPlayer] = box;
+
+                return;
+            }
+
             // finPlayer -> finBox    -> floor
             // finish    -> finPlayer -> box
             if (f0 == finPlayer && f1 == finBox && f2 == floor)
@@ -621,6 +660,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
+    this->sayWon();
     this->drawAxes(&painter);
     this->drawTextures(&painter);
 }
@@ -681,4 +721,29 @@ void MainWindow::drawTextures(QPainter *painter)
             painter->drawPixmap(x*i, y*j, x, y, pixmap);
         }
     }
+}
+
+void MainWindow::sayWon()
+{
+    for (int i = 0; i < this->length; i += 1)
+    {
+        for (int j = 0; j < this->length; j += 1)
+        {
+            if (this->map[i][j] == finish)
+            {
+                return;
+            }
+        }
+    }
+
+    this->close();
+
+    QMessageBox msgBox;
+
+    QString StrWinWidth = QString::number(this->WinWidth);
+    msgBox.setStyleSheet("QLabel{min-width: " + StrWinWidth + "px; }");
+    msgBox.setText("You won");
+    msgBox.setWindowTitle("You won");
+
+    msgBox.exec();
 }
