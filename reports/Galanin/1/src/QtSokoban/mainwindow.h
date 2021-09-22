@@ -41,12 +41,11 @@ private:
         wall,
         floor,
         player,
+        finPlayer,
         box,
-    } map[LENGTH][LENGTH];
-    enum MapFinish {
-        noFinish,
+        finBox,
         finish,
-    } finishMap[LENGTH][LENGTH];
+    } map[LENGTH][LENGTH];
 
     int xPlayer = 9;
     int yPlayer = 11;

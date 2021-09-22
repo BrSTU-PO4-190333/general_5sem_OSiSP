@@ -13,16 +13,6 @@ void MainWindow::Make1Level()
 
     for (int i = 0; i < this->length; i += 1)
     {
-        for (int j = 0; j < this->length; j += 1)
-        {
-            this->finishMap[i][j] = noFinish;
-        }
-    }
-    this->finishMap[6][9] = finish;
-    this->finishMap[6][10] = finish;
-
-    for (int i = 0; i < this->length; i += 1)
-    {
         this->map[i][0] = wall;
         this->map[i][this->length - 1] = wall;
     }
@@ -37,6 +27,9 @@ void MainWindow::Make1Level()
 
     this->map[8][9] = box;
     this->map[7][11] = box;
+
+    this->map[6][9] = finish;
+    this->map[6][10] = finish;
 
     this->map[5][7] = wall;
     this->map[6][7] = wall;

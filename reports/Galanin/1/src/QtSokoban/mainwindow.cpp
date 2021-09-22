@@ -30,19 +30,69 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
     {
         if (this->yPlayer != 0)
         {
+            MapChar f0 = this->map[this->xPlayer][this->yPlayer];
+            MapChar f1 = this->map[this->xPlayer][this->yPlayer - 1];
+            MapChar f2 = this->map[this->xPlayer][this->yPlayer - 2];
 
-            if (this->map[this->xPlayer][this->yPlayer - 1] == box && this->map[this->xPlayer][this->yPlayer - 2] != wall)
+            // player -> floor
+            // floor  -> player
+            if (f0 == player && f1 == floor)
             {
-                this->map[this->xPlayer][this->yPlayer] = floor;
                 this->yPlayer -= 1;
-                this->map[this->xPlayer][this->yPlayer] = player;
-                this->map[this->xPlayer][this->yPlayer - 1] = box;
+
+                this->map[this->xPlayer][this->yPlayer + 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = player;
+
+                return;
             }
-            else if (this->map[this->xPlayer][this->yPlayer - 1] != wall && this->map[this->xPlayer][this->yPlayer - 1] == floor)
+
+            // player -> box    -> floor
+            // floor  -> player -> box
+            if (f0 == player && f1 == box && f2 == floor)
             {
-                this->map[this->xPlayer][this->yPlayer] = floor;
                 this->yPlayer -= 1;
-                this->map[this->xPlayer][this->yPlayer] = player;
+
+                this->map[this->xPlayer][this->yPlayer + 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = player;
+                this->map[this->xPlayer][this->yPlayer - 1] = box;
+
+                return;
+            }
+
+            // player -> box    -> finish
+            // floor  -> player -> finBox
+            if (f0 == player && f1 == box && f2 == finish)
+            {
+                this->yPlayer -= 1;
+
+                this->map[this->xPlayer][this->yPlayer + 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = player;
+                this->map[this->xPlayer][this->yPlayer - 1] = finBox;
+
+                return;
+            }
+
+            // player -> finBox    -> finish
+            // floor  -> finPlayer -> finBox
+            if (f0 == player && f1 == finBox && f2 == finish)
+            {
+                this->yPlayer -= 1;
+
+                this->map[this->xPlayer][this->yPlayer + 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = finPlayer;
+                this->map[this->xPlayer][this->yPlayer - 1] = finBox;
+                return;
+            }
+
+            // player -> finish
+            // floor  -> finPlayer
+            if (f0 == player && f1 == finish)
+            {
+                this->yPlayer -= 1;
+
+                this->map[this->xPlayer][this->yPlayer + 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = finPlayer;
+                return;
             }
         }
     }
@@ -50,18 +100,69 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
     {
         if (this->xPlayer != this->length - 1)
         {
-            if (this->map[this->xPlayer + 1][this->yPlayer] == box && this->map[this->xPlayer + 2][this->yPlayer] != wall)
+            MapChar f0 = this->map[this->xPlayer    ][this->yPlayer];
+            MapChar f1 = this->map[this->xPlayer + 1][this->yPlayer];
+            MapChar f2 = this->map[this->xPlayer + 2][this->yPlayer];
+
+            // player -> floor
+            // floor  -> player
+            if (f0 == player && f1 == floor)
             {
-                this->map[this->xPlayer][this->yPlayer] = floor;
                 this->xPlayer += 1;
-                this->map[this->xPlayer][this->yPlayer] = player;
-                this->map[this->xPlayer + 1][this->yPlayer] = box;
+
+                this->map[this->xPlayer - 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = player;
+
+                return;
             }
-            else if (this->map[this->xPlayer + 1][this->yPlayer] != wall  && this->map[this->xPlayer + 1][this->yPlayer] == floor)
+
+            // player -> box    -> floor
+            // floor  -> player -> box
+            if (f0 == player && f1 == box && f2 == floor)
             {
-                this->map[this->xPlayer][this->yPlayer] = floor;
                 this->xPlayer += 1;
-                this->map[this->xPlayer][this->yPlayer] = player;
+
+                this->map[this->xPlayer - 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = player;
+                this->map[this->xPlayer + 1][this->yPlayer] = box;
+
+                return;
+            }
+
+            // player -> box    -> finish
+            // floor  -> player -> finBox
+            if (f0 == player && f1 == box && f2 == finish)
+            {
+                this->xPlayer += 1;
+
+                this->map[this->xPlayer - 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = player;
+                this->map[this->xPlayer + 1][this->yPlayer] = finBox;
+
+                return;
+            }
+
+            // player -> finBox    -> finish
+            // floor  -> finPlayer -> finBox
+            if (f0 == player && f1 == finBox && f2 == finish)
+            {
+                this->xPlayer += 1;
+
+                this->map[this->xPlayer - 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = finPlayer;
+                this->map[this->xPlayer + 1][this->yPlayer] = finBox;
+                return;
+            }
+
+            // player -> finish
+            // floor  -> finPlayer
+            if (f0 == player && f1 == finish)
+            {
+                this->xPlayer += 1;
+
+                this->map[this->xPlayer - 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = finPlayer;
+                return;
             }
         }
     }
@@ -69,18 +170,69 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
     {
         if (this->yPlayer != this->length - 1)
         {
-            if (this->map[this->xPlayer][this->yPlayer + 1] == box && this->map[this->xPlayer][this->yPlayer + 2] != wall)
+            MapChar f0 = this->map[this->xPlayer][this->yPlayer];
+            MapChar f1 = this->map[this->xPlayer][this->yPlayer + 1];
+            MapChar f2 = this->map[this->xPlayer][this->yPlayer + 2];
+
+            // player -> floor
+            // floor  -> player
+            if (f0 == player && f1 == floor)
             {
-                this->map[this->xPlayer][this->yPlayer] = floor;
                 this->yPlayer += 1;
-                this->map[this->xPlayer][this->yPlayer] = player;
-                this->map[this->xPlayer][this->yPlayer + 1] = box;
+
+                this->map[this->xPlayer][this->yPlayer - 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = player;
+
+                return;
             }
-            else if (this->map[this->xPlayer][this->yPlayer + 1] != wall && this->map[this->xPlayer][this->yPlayer + 1] == floor)
+
+            // player -> box    -> floor
+            // floor  -> player -> box
+            if (f0 == player && f1 == box && f2 == floor)
             {
-                this->map[this->xPlayer][this->yPlayer] = floor;
                 this->yPlayer += 1;
-                this->map[this->xPlayer][this->yPlayer] = player;
+
+                this->map[this->xPlayer][this->yPlayer - 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = player;
+                this->map[this->xPlayer][this->yPlayer + 1] = box;
+
+                return;
+            }
+
+            // player -> box    -> finish
+            // floor  -> player -> finBox
+            if (f0 == player && f1 == box && f2 == finish)
+            {
+                this->yPlayer += 1;
+
+                this->map[this->xPlayer][this->yPlayer - 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = player;
+                this->map[this->xPlayer][this->yPlayer + 1] = finBox;
+
+                return;
+            }
+
+            // player -> finBox    -> finish
+            // floor  -> finPlayer -> finBox
+            if (f0 == player && f1 == finBox && f2 == finish)
+            {
+                this->yPlayer += 1;
+
+                this->map[this->xPlayer][this->yPlayer - 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = finPlayer;
+                this->map[this->xPlayer][this->yPlayer + 1] = finBox;
+                return;
+            }
+
+            // player -> finish
+            // floor  -> finPlayer
+            if (f0 == player && f1 == finish)
+            {
+                this->yPlayer += 1;
+
+                this->map[this->xPlayer][this->yPlayer - 1] = floor;
+                this->map[this->xPlayer][this->yPlayer    ] = finPlayer;
+                return;
             }
         }
     }
@@ -88,17 +240,69 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
     {
         if (this->xPlayer != 0)
         {
-            if (this->map[this->xPlayer - 1][this->yPlayer] == box && this->map[this->xPlayer - 2][this->yPlayer] != wall)
+            MapChar f0 = this->map[this->xPlayer    ][this->yPlayer];
+            MapChar f1 = this->map[this->xPlayer - 1][this->yPlayer];
+            MapChar f2 = this->map[this->xPlayer - 2][this->yPlayer];
+
+            // player -> floor
+            // floor  -> player
+            if (f0 == player && f1 == floor)
             {
-                this->map[this->xPlayer][this->yPlayer] = floor;
                 this->xPlayer -= 1;
-                this->map[this->xPlayer][this->yPlayer] = player;
-                this->map[this->xPlayer - 1][this->yPlayer] = box;
+
+                this->map[this->xPlayer + 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = player;
+
+                return;
             }
-            else if (this->map[this->xPlayer - 1][this->yPlayer] != wall && this->map[this->xPlayer - 1][this->yPlayer] == floor) {
-                this->map[this->xPlayer][this->yPlayer] = floor;
+
+            // player -> box    -> floor
+            // floor  -> player -> box
+            if (f0 == player && f1 == box && f2 == floor)
+            {
                 this->xPlayer -= 1;
-                this->map[this->xPlayer][this->yPlayer] = player;
+
+                this->map[this->xPlayer + 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = player;
+                this->map[this->xPlayer - 1][this->yPlayer] = box;
+
+                return;
+            }
+
+            // player -> box    -> finish
+            // floor  -> player -> finBox
+            if (f0 == player && f1 == box && f2 == finish)
+            {
+                this->xPlayer -= 1;
+
+                this->map[this->xPlayer + 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = player;
+                this->map[this->xPlayer - 1][this->yPlayer] = finBox;
+
+                return;
+            }
+
+            // player -> finBox    -> finish
+            // floor  -> finPlayer -> finBox
+            if (f0 == player && f1 == finBox && f2 == finish)
+            {
+                this->xPlayer -= 1;
+
+                this->map[this->xPlayer + 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = finPlayer;
+                this->map[this->xPlayer - 1][this->yPlayer] = finBox;
+                return;
+            }
+
+            // player -> finish
+            // floor  -> finPlayer
+            if (f0 == player && f1 == finish)
+            {
+                this->xPlayer -= 1;
+
+                this->map[this->xPlayer + 1][this->yPlayer] = floor;
+                this->map[this->xPlayer    ][this->yPlayer] = finPlayer;
+                return;
             }
         }
     }
@@ -135,12 +339,11 @@ void MainWindow::drawTextures(QPainter *painter)
         for (int j = 0; j < this->length; j += 1)
         {
             QString path = ":/img/_pics/err.png";
-            if (this->finishMap[i][j] == finish)
+            if (this->map[i][j] == finish)
             {
                 path = ":/img/_pics/finish.png";
-            }
-
-            if (this->map[i][j] == floor)
+            }                
+            else if (this->map[i][j] == floor)
             {
                 path = ":/img/_pics/floor.png";
             }
