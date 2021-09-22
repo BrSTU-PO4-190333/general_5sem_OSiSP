@@ -1,3 +1,7 @@
+## Into
+
+![](rep/_assets/GameIntro.gif)
+
 ## Task
 
 > **Цель работы**:
