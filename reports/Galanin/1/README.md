@@ -1,6 +1,6 @@
 ## Into
 
-![](rep/_assets/GameIntro.gif)
+![](docs/intro.gif)
 
 ## Task
 
