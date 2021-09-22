@@ -1,0 +1,35 @@
+\documentclass[12pt, a4paper, simple]{eskdtext}
+
+\usepackage{env}
+\usepackage{_sty/lstlisting}
+\usepackage{hyperref}
+
+% Графа 1 (наименование изделия/документа)
+\ESKDcolumnI{
+    \ESKDfontV
+    \PageTitleDocumentName~№\PageTitleDocumentNumber
+}
+% Графа 2 (обозначение документа)
+% X.X.X.XX 81 00 - код пояснительной записки
+% X.X.X.XX 12 00
+% X.X.X.XX 90 00
+\ESKDsignature{
+    \PageTitleDocumentLetterI\PageTitleDocumentLetterII\PageTitleDocumentLetterIII.\PageTitleStudentCard.\PageTitleStudentGroupName\PageTitleStudentGroupNumber.0\PageTitleDocumentNumber~81 00
+}
+% Графа 4 (литералы)
+\ESKDcolumnIVfI {\PageTitleDocumentLetterI}
+\ESKDcolumnIVfII {\PageTitleDocumentLetterII}
+\ESKDcolumnIVfIII {\PageTitleDocumentLetterIII}
+% Графа 9 (наименование или различительный индекс предприятия) задает команда
+\ESKDcolumnIX {\PageTitleDepartmentLetters}
+% Графа 11 (фамилии лиц, подписывающих документ) задают команды
+\ESKDcolumnXIfI {\PageTitleStudentSurname}
+\ESKDcolumnXIfII {\PageTitleTeacherSurname}
+\ESKDcolumnXIfV {\PageTitleTeacherSurname}
+
+\begin{document}
+    \begin{ESKDtitlePage}
+        \input{_tex/PageTitle.tex}
+    \end{ESKDtitlePage}
+    \input{_tex/PageBody.tex}
+\end{document}

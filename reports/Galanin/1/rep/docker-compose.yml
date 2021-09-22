@@ -1,0 +1,8 @@
+version: '3'
+services:
+    latex:
+        image: mirisbowring/texlive_ctan_full:2019
+        container_name: tex-live-full
+        volumes:
+            - ./../:/content
+        command: ['make', '-C', '/content/rep', 'build']
