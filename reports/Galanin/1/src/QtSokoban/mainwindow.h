@@ -26,8 +26,12 @@ public:
     ~MainWindow();
 
 protected:
-    void Make1Level();
+    void generate1Level();
     void keyPressEvent(QKeyEvent* e) override;
+    void goTop();
+    void goRight();
+    void goBottom();
+    void goLeft();
     void paintEvent(QPaintEvent* event) override;
     void drawAxes(QPainter* painter);
     void drawTextures(QPainter* painter);

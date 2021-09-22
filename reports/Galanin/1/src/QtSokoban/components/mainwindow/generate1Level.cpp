@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-void MainWindow::Make1Level()
+void MainWindow::generate1Level()
 {
     char StrMap[] ="\
 xxxxxxxxxxxxxxx\n\
@@ -21,7 +21,7 @@ xxxxxxxxxxxxxxx\n\
 xxxxxxxxxxxxxxx\n\
 ";
 
-    int StrMapLen = strlen(StrMap);
+    size_t StrMapLen = strlen(StrMap);
     for (int iter = 0, i = 0, j = 0; iter < StrMapLen; iter += 1)
     {
 
