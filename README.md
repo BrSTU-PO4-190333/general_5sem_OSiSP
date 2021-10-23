@@ -9,7 +9,7 @@
 
 Лабораторные: https://drive.google.com/drive/folders/1jmjafVy9P-8DCP1jq80phP5Xaqk_oLpq?usp=sharing
 
-Список подгруппы: 
+Список подгруппы: https://docs.google.com/spreadsheets/d/1-R3bA4ckkk-FcbK1r8vtsaid1wk33YqUIa5QnNq0lCU/edit?usp=sharing
 
 
 Отчеты коммитаем в reports/<Ваша_фамилия>/<Номер_лабораторной_работы>/rep
