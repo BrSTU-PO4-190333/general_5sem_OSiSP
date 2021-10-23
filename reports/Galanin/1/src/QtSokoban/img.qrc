@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>_pics/favicon.png</file>
+        <file>_pics/err.png</file>
+        <file>_pics/wall.png</file>
+        <file>_pics/floor.png</file>
+        <file>_pics/player.png</file>
+        <file>_pics/finPlayer.png</file>
+        <file>_pics/box.png</file>
+        <file>_pics/finBox.png</file>
+        <file>_pics/finish.png</file>
+    </qresource>
+</RCC>
