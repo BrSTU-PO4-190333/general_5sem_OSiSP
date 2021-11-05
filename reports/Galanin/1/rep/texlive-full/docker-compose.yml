@@ -4,5 +4,5 @@ services:
         image: mirisbowring/texlive_ctan_full:2019
         container_name: tex-live-full
         volumes:
-            - ./../:/content
-        command: ['make', '-C', '/content/rep', 'build']
+            - ./../../:/home/user/content
+        command: ['make', '-C', '/home/user/content/rep/texlive-full', 'build']
