@@ -1,0 +1,87 @@
+#include "tetrixboard.h"
+#include "tetrixwindow.h"
+
+#include <QCoreApplication>
+#include <QGridLayout>
+#include <QLabel>
+#include <QLCDNumber>
+#include <QPushButton>
+
+//! [0]
+TetrixWindow::TetrixWindow(QWidget *parent)
+: QWidget(parent), board(new TetrixBoard)
+{
+
+    scoreLcd = new QLCDNumber(5);
+    scoreLcd->setSegmentStyle(QLCDNumber::Filled);
+
+    linesLcd = new QLCDNumber(5);
+    linesLcd->setSegmentStyle(QLCDNumber::Filled);
+
+    aboutLcd = new QLCDNumber(5);
+    aboutLcd->setSegmentStyle(QLCDNumber::Filled);
+
+    fontLcd = new QLCDNumber(5);
+    fontLcd->setSegmentStyle(QLCDNumber::Filled);
+    //! [2]
+    startButton = new QPushButton(tr("&Start"));
+    startButton->setFocusPolicy(Qt::NoFocus);
+    quitButton = new QPushButton(tr("&Quit"));
+    quitButton->setFocusPolicy(Qt::NoFocus);
+    pauseButton = new QPushButton(tr("&Pause"));
+    aboutButton = new QPushButton(tr("&About"));
+    fontButton = new QPushButton(tr("&Font"));
+
+    //! [2] //! [3]
+    pauseButton->setFocusPolicy(Qt::NoFocus);
+    //! [3] //! [4]
+
+    connect(startButton, &QPushButton::clicked, board, &TetrixBoard::start);
+    //! [4] //! [5]
+    connect(quitButton , &QPushButton::clicked, qApp, &QCoreApplication::quit);
+    connect(pauseButton, &QPushButton::clicked, board, &TetrixBoard::pause);
+    connect(aboutButton, &QPushButton::clicked, board, &TetrixBoard::About);
+    connect(fontButton, &QPushButton::clicked, board, &TetrixBoard::changeFont);
+#if __cplusplus >= 201402L
+    connect(board, &TetrixBoard::scoreChanged,
+            scoreLcd, qOverload<int>(&QLCDNumber::display));
+    connect(board, &TetrixBoard::linesRemovedChanged,
+            linesLcd, qOverload<int>(&QLCDNumber::display));
+#else
+    connect(board, &TetrixBoard::scoreChanged,
+            scoreLcd, QOverload<int>::of(&QLCDNumber::display));
+    connect(board, &TetrixBoard::linesRemovedChanged,
+            linesLcd, QOverload<int>::of(&QLCDNumber::display));
+#endif
+    //! [5]
+
+    //! [6]
+    QGridLayout *layout = new QGridLayout;
+    layout->addWidget(createLabel(tr("")), 0, 0);
+    layout->addWidget(createLabel(tr("")), 2, 0);
+    layout->addWidget(startButton, 4, 0);
+    layout->addWidget(board, 0, 1, 6, 1);
+    layout->addWidget(createLabel(tr("SCORE")), 0, 2);
+    layout->addWidget(scoreLcd, 1, 2);
+    layout->addWidget(createLabel(tr("LINES REMOVED")), 2, 2);
+    layout->addWidget(linesLcd, 3, 2);
+    layout->addWidget(quitButton, 4, 2);
+    layout->addWidget(pauseButton, 5, 2);
+    layout->addWidget(aboutButton, 6, 2);
+    layout->addWidget(fontButton, 5, 0);
+    setLayout(layout);
+
+    setWindowTitle(getWindowTitle());
+
+    resize(550, 370);
+}
+//! [6]
+
+//! [7]
+QLabel *TetrixWindow::createLabel(const QString &text)
+{
+    QLabel *label = new QLabel(text);
+    label->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+    return label;
+}
+//! [7]
