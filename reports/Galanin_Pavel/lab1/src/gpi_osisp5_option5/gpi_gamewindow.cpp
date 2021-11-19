@@ -9,6 +9,7 @@ gpi_GameWindow::gpi_GameWindow (QWidget *parent) :
     // = = = = = = = = = = = = = = = =
 
     ui->setupUi (this);
+    this->setWindowIcon (QIcon (":/@gpi@/_assets/gpi_MainWindow__favicon.png"));
 
     connect (timer, SIGNAL (timeout ()), this, SLOT (gpi_gamewindow_animate ()));
     timer->start (100);

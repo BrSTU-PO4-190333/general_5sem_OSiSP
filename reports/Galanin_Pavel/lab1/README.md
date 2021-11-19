@@ -1,42 +1,40 @@
 ## Into
 
-![](docs/intro.gif)
-
 <table>
     <tr>
-        <td><img width="64" src="src/QtSokoban/_pics/favicon.png" /></td>
+        <td><img width="64" src="src/gpi_osisp5_option5/_assets/gpi_MainWindow__favicon.png" /></td>
         <td>Game icon</td>
     </tr>
     <tr>
-        <td><img width="64" src="src/QtSokoban/_pics/floor.png" /></td>
+        <td><img width="64" src="src/gpi_osisp5_option5/_assets/gpi_GameWindow__floor.png" /></td>
         <td>Empty cell</td>
     </tr>
     <tr>
-        <td><img width="64" src="src/QtSokoban/_pics/finish.png" /></td>
+        <td><img width="64" src="src/gpi_osisp5_option5/_assets/gpi_GameWindow__finish.png" /></td>
         <td>Cell with a finish for a box</td>
     </tr>
     <tr>
-        <td><img width="64" src="src/QtSokoban/_pics/player.png" /></td>
+        <td><img width="64" src="src/gpi_osisp5_option5/_assets/gpi_GameWindow__player.png" /></td>
         <td>Player cell</td>
     </tr>
     <tr>
-        <td><img width="64" src="src/QtSokoban/_pics/finPlayer.png" /></td>
+        <td><img width="64" src="src/gpi_osisp5_option5/_assets/gpi_GameWindow__finPlayer.png" /></td>
         <td>Cell with a player at the finish</td>
     </tr>
     <tr>
-        <td><img width="64" src="src/QtSokoban/_pics/box.png" /></td>
+        <td><img width="64" src="src/gpi_osisp5_option5/_assets/gpi_GameWindow__box.png" /></td>
         <td>Cell with box</td>
     </tr>
     <tr>
-        <td><img width="64" src="src/QtSokoban/_pics/finBox.png" /></td>
+        <td><img width="64" src="src/gpi_osisp5_option5/_assets/gpi_GameWindow__finBox.png" /></td>
         <td>Cell with a box at the finish</td>
     </tr>
     <tr>
-        <td><img width="64" src="src/QtSokoban/_pics/wall.png" /></td>
+        <td><img width="64" src="src/gpi_osisp5_option5/_assets/gpi_GameWindow__wall.png" /></td>
         <td>Cell with wall</td>
     </tr>
     <tr>
-        <td><img width="64" src="src/QtSokoban/_pics/err.png" /></td>
+        <td><img width="64" src="src/gpi_osisp5_option5/_assets/gpi_GameWindow__err.png" /></td>
         <td>Cell without functionality</td>
     </tr>
 </table>

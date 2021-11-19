@@ -1,0 +1,92 @@
+Цель работы:
+приобрести практические навыки проектирования и разработки приложений с графическим
+пользовательским интерфейсом в ОС Windows средствами Qt.
+
+\paragraph{Вариант 5}\hspace{0pt}
+
+Игра <<Сокобан>>.
+Один уровень игры.
+Общая идея: имеется комната-лабиринт (15Х15 ячеек),
+в которой необходимо расставить ящики (5 штук) на указанные позиции.
+Главный герой может лишь толкать ящики вперед.
+Таким образом, возможны конфигурации, из которых не возможно построить желаемое решение
+(например, если ящик был задвинут в тупик).
+
+\begin{figure}[!hp]
+    \centering
+    \includegraphics[width=5cm]
+    {../gpi_osisp5_option5/_assets/gpi_MainWindow__favicon.png}
+    \caption{Иконка игры}
+\end{figure}
+
+\begin{figure}[!hp]
+    \begin{minipage}{0.24\textwidth}
+        \centering
+        \includegraphics[width=3cm]
+        {../gpi_osisp5_option5/_assets/gpi_GameWindow__floor.png}
+        \caption{Пустая ячейка}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+        \includegraphics[width=3cm]
+        {../gpi_osisp5_option5/_assets/gpi_GameWindow__box.png}
+        \caption{Ячейка с коробкой}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+        \includegraphics[width=3cm]
+        {../gpi_osisp5_option5/_assets/gpi_GameWindow__player.png}
+        \caption{Ячейка с игроком}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+        \includegraphics[width=3cm]
+        {../gpi_osisp5_option5/_assets/gpi_GameWindow__wall.png}
+        \caption{Ячейка со стеной}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+    \begin{minipage}{0.24\textwidth}
+        \centering
+        \includegraphics[width=3cm]
+        {../gpi_osisp5_option5/_assets/gpi_GameWindow__finish.png}
+        \caption{Финиш для коробки}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+        \includegraphics[width=3cm]
+        {../gpi_osisp5_option5/_assets/gpi_GameWindow__finBox.png}
+        \caption{Коробка на финише}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+        \includegraphics[width=3cm]
+        {../gpi_osisp5_option5/_assets/gpi_GameWindow__finPlayer.png}
+        \caption{Игрок на финише}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+        \centering
+        \includegraphics[width=3cm]
+        {../gpi_osisp5_option5/_assets/gpi_GameWindow__err.png}
+        \caption{Ячейка без функционала}
+    \end{minipage}
+\end{figure}
+
+\newpage
+
+\lstinputlisting[language=make]{../gpi_osisp5_option5/gpi_osisp5_option5.pro}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/main.cpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_mainwindow.hpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_mainwindow.cpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_gamewindow.hpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_gamewindow.cpp}
+\lstinputlisting[]{../gpi_osisp5_option5/gpi_gamewindow.qrc}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_gamewindow__gpi_drawAxes.cpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_gamewindow__gpi_drawTextures.cpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_gamewindow__gpi_generateLevel1.cpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_gamewindow__gpi_goBottom.cpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_gamewindow__gpi_goLeft.cpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_gamewindow__gpi_goRight.cpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_gamewindow__gpi_goTop.cpp}
+\lstinputlisting[language=c++]{../gpi_osisp5_option5/gpi_gamewindow__gpi_sayWon.cpp}

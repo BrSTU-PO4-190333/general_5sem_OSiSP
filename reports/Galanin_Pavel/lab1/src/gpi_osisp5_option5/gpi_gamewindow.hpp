@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include <QKeyEvent>
 #include <QTimer>
+#include <QIcon>
 
 namespace Ui {
 class gpi_GameWindow;

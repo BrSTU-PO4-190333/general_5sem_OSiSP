@@ -6,6 +6,7 @@ gpi_MainWindow::gpi_MainWindow (QWidget *parent)
     , ui (new Ui::gpi_MainWindow)
 {
     ui->setupUi(this);
+    this->setWindowIcon (QIcon (":/@gpi@/_assets/gpi_MainWindow__favicon.png"));
 }
 
 gpi_MainWindow::~gpi_MainWindow ()

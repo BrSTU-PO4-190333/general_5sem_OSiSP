@@ -1,8 +1,7 @@
-build:
-	#pdflatex main.tex
-	latexmk -pdf -output-directory=_build main.tex
+gpi_build-rep:
+	latexmk -pdf -output-directory=_build gpi_osisp_lab1.tex
 
-clean:
+gpi_clean:
 	rm -rfv ./*/*.aux
 	rm -rfv ./*/*.fdb_latexmk
 	rm -rfv ./*/*.fls
