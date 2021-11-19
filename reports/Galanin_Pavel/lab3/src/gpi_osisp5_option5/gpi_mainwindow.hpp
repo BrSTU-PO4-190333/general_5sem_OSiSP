@@ -24,6 +24,8 @@ private slots:
     void on_pushButton_ShowGameWindow_clicked ();
     void on_pushButton_CloseMainWindow_clicked ();
     void gpi_on_actionSelectFont_triggered ();
+    void gpi_on_actionAboutQt_triggered ();
+    void gpi_on_actionAboutAuthor_triggered ();
 
 private:
     Ui::gpi_MainWindow *ui;

@@ -62,8 +62,16 @@
     </property>
     <addaction name="actionSelectFont"/>
    </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>О программе</string>
+    </property>
+    <addaction name="actionAboutAuthor"/>
+    <addaction name="actionAboutQt"/>
+   </widget>
    <addaction name="menuLevels"/>
    <addaction name="menuSettings"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionLevel1">
@@ -74,6 +82,16 @@
   <action name="actionSelectFont">
    <property name="text">
     <string>Выбрать шрифт</string>
+   </property>
+  </action>
+  <action name="actionAboutQt">
+   <property name="text">
+    <string>О версии Qt</string>
+   </property>
+  </action>
+  <action name="actionAboutAuthor">
+   <property name="text">
+    <string>Об авторе</string>
    </property>
   </action>
  </widget>

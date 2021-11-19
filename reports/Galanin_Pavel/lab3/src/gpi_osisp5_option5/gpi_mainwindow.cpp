@@ -10,6 +10,8 @@ gpi_MainWindow::gpi_MainWindow (QWidget *parent)
 
     connect(ui->actionLevel1, SIGNAL(triggered()), this, SLOT(gpi_on_actionLevel1_triggered()));
     connect(ui->actionSelectFont, SIGNAL(triggered()), this, SLOT(gpi_on_actionSelectFont_triggered()));
+    connect(ui->actionAboutQt, SIGNAL(triggered()), this, SLOT(gpi_on_actionAboutQt_triggered()));
+    connect(ui->actionAboutAuthor, SIGNAL(triggered()), this, SLOT(gpi_on_actionAboutAuthor_triggered()));
 }
 
 gpi_MainWindow::~gpi_MainWindow ()
@@ -46,4 +48,24 @@ void gpi_MainWindow::gpi_on_actionSelectFont_triggered ()
         QSettings settings(this);
         settings.setValue("gpi_VIEWF", gpi_newFont);
     }
+}
+
+void gpi_MainWindow::gpi_on_actionAboutQt_triggered ()
+{
+    qApp->aboutQt();
+}
+
+void gpi_MainWindow::gpi_on_actionAboutAuthor_triggered ()
+{
+    QString str = "\
+Разработчик: \n \
+    студент 3-его курса \n \
+    V-го семестра \n \
+    факультета ЭИС \n \
+    группы ПО-4 (1) \n \
+    Галанин П. И. \n \
+    GitHub: Pavel-Innokentevich-Galanin \n \
+    Email: po000406@g.bstu.by \n \
+";
+    QMessageBox::about(this, "О программе", str);
 }
