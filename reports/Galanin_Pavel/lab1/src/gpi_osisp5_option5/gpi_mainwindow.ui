@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>gpi_MainWindow</class>
+ <widget class="QMainWindow" name="gpi_MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>200</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow | Socoban</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton_ShowGameWindow">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>281</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Новая игра</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_CloseMainWindow">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>281</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Выйти</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>300</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuLevels">
+    <property name="title">
+     <string>Уровни</string>
+    </property>
+    <addaction name="actionLevel1"/>
+   </widget>
+   <addaction name="menuLevels"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionLevel1">
+   <property name="text">
+    <string>Level 1</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
