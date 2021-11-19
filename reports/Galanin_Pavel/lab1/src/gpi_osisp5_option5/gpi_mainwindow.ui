@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Запустить игру</string>
+     <string>Новая игра</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_CloseMainWindow">
@@ -50,8 +50,20 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuLevels">
+    <property name="title">
+     <string>Уровни</string>
+    </property>
+    <addaction name="actionLevel1"/>
+   </widget>
+   <addaction name="menuLevels"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionLevel1">
+   <property name="text">
+    <string>Level 1</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -17,11 +17,11 @@ public:
     ~gpi_MainWindow ();
 
 private slots:
+    void gpi_on_actionLevel1_triggered ();
     void on_pushButton_ShowGameWindow_clicked ();
     void on_pushButton_CloseMainWindow_clicked ();
 
 private:
     Ui::gpi_MainWindow *ui;
-    gpi_GameWindow gpi_gw;
 };
 #endif // GPI_MAINWINDOW_HPP

@@ -1,18 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>gpi_GameWindow</class>
- <widget class="QWidget" name="gpi_GameWindow">
+ <widget class="QMainWindow" name="gpi_GameWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>GameWindow | Socoban</string>
+   <string>MainWindow</string>
   </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Меню</string>
+    </property>
+    <addaction name="actionRestartLevel"/>
+    <addaction name="separator"/>
+    <addaction name="actionMainMenu"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionRestartLevel">
+   <property name="text">
+    <string>Перезапустить уровень</string>
+   </property>
+  </action>
+  <action name="actionMainMenu">
+   <property name="text">
+    <string>Выйти в главное меню</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -2,27 +2,30 @@
 #define GPI_GAMEWINDOW_HPP
 #define LENGTH 15
 
-#include <QWidget>
+#include <QMainWindow>
 #include <QPainter>
 #include <QMessageBox>
 #include <QKeyEvent>
 #include <QTimer>
 #include <QIcon>
+#include "gpi_MainWindow.hpp"
 
 namespace Ui {
 class gpi_GameWindow;
 }
 
-class gpi_GameWindow : public QWidget
+class gpi_GameWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit gpi_GameWindow (QWidget *parent = nullptr);
+    explicit gpi_GameWindow (QMainWindow *parent = nullptr);
     ~gpi_GameWindow ();
 
 public slots:
     void gpi_gamewindow_animate();
+    void gpi_on_actionRestartLevel_triggered();
+    void gpi_on_actionMainMenu_triggered();
 
 protected:
     void paintEvent (QPaintEvent *event) override;
