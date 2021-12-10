@@ -2,9 +2,6 @@
 #define GPI_MAINWINDOW_HPP
 
 #include <QMainWindow>
-#include <QFontDialog>
-#include <QSettings>
-
 #include "gpi_gamewindow.hpp"
 
 QT_BEGIN_NAMESPACE
@@ -23,9 +20,6 @@ private slots:
     void gpi_on_actionLevel1_triggered ();
     void on_pushButton_ShowGameWindow_clicked ();
     void on_pushButton_CloseMainWindow_clicked ();
-    void gpi_on_actionSelectFont_triggered ();
-    void gpi_on_actionAboutQt_triggered ();
-    void gpi_on_actionAboutAuthor_triggered ();
 
 private:
     Ui::gpi_MainWindow *ui;
