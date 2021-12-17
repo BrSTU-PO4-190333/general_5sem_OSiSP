@@ -1,0 +1,15 @@
+C:\Users\Sergei\source\repos\lab1\lab1\bin\Release\lab1.exe.config
+C:\Users\Sergei\source\repos\lab1\lab1\bin\Release\lab1.exe
+C:\Users\Sergei\source\repos\lab1\lab1\bin\Release\lab1.pdb
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\MainWindow.g.cs
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\App.g.cs
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\lab1_MarkupCompile.cache
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\lab1_MarkupCompile.lref
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\MainWindow.baml
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\lab1.g.resources
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\lab1.Properties.Resources.resources
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\lab1.csproj.GenerateResource.cache
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\lab1.csproj.CoreCompileInputs.cache
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\lab1.exe
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\lab1.pdb
+C:\Users\Sergei\source\repos\lab1\lab1\obj\Release\lab1.csprojAssemblyReference.cache
