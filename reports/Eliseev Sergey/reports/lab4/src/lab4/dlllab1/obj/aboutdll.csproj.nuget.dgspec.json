@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Sergei\\OSiSP\\reports\\Eliseev Sergey\\reports\\lab4\\src\\lab4\\dlllab1\\aboutdll.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Sergei\\OSiSP\\reports\\Eliseev Sergey\\reports\\lab4\\src\\lab4\\dlllab1\\aboutdll.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Sergei\\OSiSP\\reports\\Eliseev Sergey\\reports\\lab4\\src\\lab4\\dlllab1\\aboutdll.csproj",
+        "projectName": "aboutdll",
+        "projectPath": "C:\\Users\\Sergei\\OSiSP\\reports\\Eliseev Sergey\\reports\\lab4\\src\\lab4\\dlllab1\\aboutdll.csproj",
+        "packagesPath": "C:\\Users\\Sergei\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sergei\\OSiSP\\reports\\Eliseev Sergey\\reports\\lab4\\src\\lab4\\dlllab1\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Sergei\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
