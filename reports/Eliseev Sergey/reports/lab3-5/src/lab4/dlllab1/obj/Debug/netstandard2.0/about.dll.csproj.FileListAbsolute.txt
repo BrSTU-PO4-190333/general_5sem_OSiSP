@@ -1,0 +1,9 @@
+C:\Users\Sergei\source\repos\lab1\dlllab1\bin\Debug\netstandard2.0\about.dll.deps.json
+C:\Users\Sergei\source\repos\lab1\dlllab1\bin\Debug\netstandard2.0\about.dll.dll
+C:\Users\Sergei\source\repos\lab1\dlllab1\bin\Debug\netstandard2.0\about.dll.pdb
+C:\Users\Sergei\source\repos\lab1\dlllab1\obj\Debug\netstandard2.0\about.dll.csprojAssemblyReference.cache
+C:\Users\Sergei\source\repos\lab1\dlllab1\obj\Debug\netstandard2.0\about.dll.csproj.CoreCompileInputs.cache
+C:\Users\Sergei\source\repos\lab1\dlllab1\obj\Debug\netstandard2.0\about.dll.AssemblyInfoInputs.cache
+C:\Users\Sergei\source\repos\lab1\dlllab1\obj\Debug\netstandard2.0\about.dll.AssemblyInfo.cs
+C:\Users\Sergei\source\repos\lab1\dlllab1\obj\Debug\netstandard2.0\about.dll.dll
+C:\Users\Sergei\source\repos\lab1\dlllab1\obj\Debug\netstandard2.0\about.dll.pdb
