@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>gpi_GameWindow</class>
+ <widget class="QMainWindow" name="gpi_GameWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Меню</string>
+    </property>
+    <addaction name="gpi_action_restart"/>
+    <addaction name="gpi_action_align"/>
+    <addaction name="separator"/>
+    <addaction name="gpi_action_1_lvl"/>
+    <addaction name="gpi_action_2_lvl"/>
+    <addaction name="gpi_action_3_lvl"/>
+    <addaction name="gpi_action_4_lvl"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>О программе</string>
+    </property>
+    <addaction name="gpi_action_about"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="gpi_action_align">
+   <property name="text">
+    <string>gpi_ Выровнять окно</string>
+   </property>
+  </action>
+  <action name="gpi_action_1_lvl">
+   <property name="text">
+    <string>gpi_ 1-ый уровень</string>
+   </property>
+  </action>
+  <action name="gpi_action_2_lvl">
+   <property name="text">
+    <string>gpi_ 2-ой уровень</string>
+   </property>
+  </action>
+  <action name="gpi_action_3_lvl">
+   <property name="text">
+    <string>gpi_ 3-ий уровень</string>
+   </property>
+  </action>
+  <action name="gpi_action_4_lvl">
+   <property name="text">
+    <string>gpi_ 4-ый уровень</string>
+   </property>
+  </action>
+  <action name="gpi_action_restart">
+   <property name="text">
+    <string>gpi_ Переиграть</string>
+   </property>
+  </action>
+  <action name="gpi_action_about">
+   <property name="text">
+    <string>Об авторе</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

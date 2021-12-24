@@ -1,0 +1,53 @@
+\ESKDstyle{empty}
+
+% = = = = = = = = = = = = = = = =
+
+Цель работы:
+ознакомиться с возможностями, предлагаемыми Qt для поддержки сетевого взаимодействия программ
+
+% % = = = = = = = = = = = = = = = =
+
+\section{Сервер}
+
+Сервер возвращает JSON с версиями и dll файлы.
+
+\begin{itemize}
+    \item \url{http://localhost:3002/versions} - получаем JSON
+    \item \url{http://localhost:3002/gpi_helper.dll} - загрузка dll
+    \item \url{http://localhost:3002/gpi_helper_class.dll} - загрузка dll
+    \item \url{http://localhost:3002/gpi_about.dll} - загрузка dll
+\end{itemize}
+
+\lstinputlisting[]{../gpi_server/package.json}
+
+\lstinputlisting[]{../gpi_server/gpi_versions.json}
+
+\lstinputlisting[]{../gpi_server/gpi_app.js}
+
+% % = = = = = = = = = = = = = = = =
+
+\section{Клиент проверяет обновления}
+
+По нажати кнопки обновить программу, будет произведена проверка версий.
+При различии версий будет скачан новый dll и обновлен файл с версиями (gpi\_versions.json). 
+
+\lstinputlisting[language=c++]{../gpi_osisp5_lab4/gpi_osisp5_option5/gpi_updater.cpp}
+
+\lstinputlisting[language=c++]{../gpi_osisp5_lab4/gpi_osisp5_option5/gpi_downloader.hpp}
+
+\lstinputlisting[language=c++]{../gpi_osisp5_lab4/gpi_osisp5_option5/gpi_downloader.cpp}
+
+\section{Новый уровень}
+
+Новый уровень записан в файле helper.dll.
+
+\lstinputlisting[language=c++]{../gpi_osisp5_lab4/gpi_helper/gpi_helper.h}
+
+\lstinputlisting[language=c++]{../gpi_osisp5_lab4/gpi_helper/gpi_helper.cpp}
+
+\paragraph{} \hspace{0pt}
+
+\textbf{Вывод}: Ознакомился с возможностями Qt для межсерверного взаимодействия.
+Научился работать с JSON файлами.
+Научился отправлять запросы GET на сервер.
+Научился скачивать файл с сервера.
