@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="@">
+        <file>_assets/gpi_favicon.png</file>
+        <file>_assets/gpi_GameWindow__box.png</file>
+        <file>_assets/gpi_GameWindow__err.png</file>
+        <file>_assets/gpi_GameWindow__finBox.png</file>
+        <file>_assets/gpi_GameWindow__finish.png</file>
+        <file>_assets/gpi_GameWindow__finPlayer.png</file>
+        <file>_assets/gpi_GameWindow__floor.png</file>
+        <file>_assets/gpi_GameWindow__player.png</file>
+        <file>_assets/gpi_GameWindow__wall.png</file>
+    </qresource>
+</RCC>

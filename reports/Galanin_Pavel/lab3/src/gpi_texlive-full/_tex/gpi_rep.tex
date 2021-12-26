@@ -1,0 +1,152 @@
+\ESKDstyle{empty}
+
+\tableofcontents
+\thispagestyle{empty} % удаляет нумерацию страниц, которую создает библиотека
+\newpage
+
+% = = = = = = = = = = = = = = = =
+
+Цель работы:
+научиться разрабатывать и использовать динамические библиотеки (DLL) с использованием Qt.
+
+% = = = = = = = = = = = = = = = =
+
+\section{Уточнение}
+
+Чтобы подключить dll библиотеку, её нужно сбилдить в отдельном проекте, это можно делать как в Visual Studio 2022, 
+создав шаблон Dynamic-Link Library (DLL), так и в Qt Creator, выбрав External Library.
+
+Чтобы сбилдить проект в QtCreator выбираем справа сбоку проект,
+жмём правой кнопкой мыши и жмём <<Build "...">>.
+
+Проект создаст dll файл в папке <<build-...debug>> / <<Название проекта>> / <<debug>> / <<dll файл>>,
+либо в <<build-...release>> / <<Название проекта>> / <<release>> / <<dll файл>>.
+
+Этот dll файл копируем рядом с *.exe файлом графического приложения.
+
+\begin{lstlisting}[numbers=none, name=gpi_copy_dll.bat]
+@REM Копируем helper.dll
+
+copy build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Debug\gpi_helper\
+debug\gpi_helper.dll build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Debug\
+gpi_osisp5_option5\debug\
+
+copy build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Release\
+gpi_helper\release\gpi_helper.dll build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Release\
+gpi_osisp5_option5\release\
+
+@REM Копируем about.dll
+
+copy build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Debug\
+gpi_about\debug\gpi_about.dll
+build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Debug\
+gpi_osisp5_option5\debug\
+
+copy build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Release\
+gpi_about\release\gpi_about.dll
+build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Release\
+gpi_osisp5_option5\release\
+
+@REM Копируем helper_class.dll
+
+copy build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Debug\
+gpi_helper_class\debug\gpi_helper_class.dll
+build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Debug\
+gpi_osisp5_option5\debug\
+
+copy build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Release\
+gpi_helper_class\release\gpi_helper_class.dll
+build-gpi_osisp5_lab3-Desktop_Qt_6_2_2_MinGW_64_bit-Release\
+gpi_osisp5_option5\release\
+\end{lstlisting}
+
+% = = = = = = = = = = = = = = = =
+
+\section{Задание (helper.dll)}
+
+Выбрать 3 вспомогательные функции и вынести их описание и реализацию в динамическую библиотеку helper.dll.
+В основном приложении осуществить загрузку реализованных функций во время работы программы
+(at run-time, с использованием объекта QLibrary) и их вызов.
+
+\subsection{Проект dll}
+
+\lstinputlisting[language=make]{../gpi_osisp5_lab3/gpi_helper/gpi_helper.pro}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_helper/gpi_helper_global.h}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_helper/gpi_helper.h}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_helper/gpi_helper.cpp}
+
+\subsection{Проект gui}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_osisp5_option5/gpi_helper.cpp}
+
+% = = = = = = = = = = = = = = = =
+
+\newpage
+
+\section{Задание (helper\_class.dll)}
+
+Выбрать вспомогательный класс и вынести его описание и реализацию в динамическую библиотеку helper\_class.dll.
+В основном приложении осуществить загрузку реализованного класса во время компиляции (at compile-time).
+
+\subsection{Проект dll}
+
+\lstinputlisting[language=make]{../gpi_osisp5_lab3/gpi_helper_class/gpi_helper_class.pro}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_helper_class/gpi_helper_class_global.h}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_helper_class/gpi_helper_class.hpp}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_helper_class/gpi_helper_class.cpp}
+
+\subsection{Проект gui}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_osisp5_option5/gpi_helper_class.hpp}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_osisp5_option5/gpi_helper_class.cpp}
+
+% = = = = = = = = = = = = = = = =
+
+\section{Задание (about.dll)}
+
+Реализовать окно «О программе» в виде объекта динамической библиотеки about.dll
+с указанием автора программы, группы, курса и краткого описания разработанного приложения.
+
+Осуществить импорт указанной библиотеки и отображение соответствующего окна при выборе пункта меню <<О программе>>.
+
+\subsection{Проект dll}
+
+\lstinputlisting[language=make]{../gpi_osisp5_lab3/gpi_about/gpi_about.pro}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_about/gpi_about_global.h}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_about/gpi_about.hpp}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_about/gpi_about.cpp}
+
+\newpage
+
+\subsection{Проект gui}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_osisp5_option5/gpi_about.cpp}
+
+% = = = = = = = = = = = = = = = =
+
+\newpage
+
+\section{Задание (изменение шрифта)}
+
+Реализовать расширения для приложения, позволяющие изменять оформление пунктов меню
+(шрифт, размер, начертание и т.д.).
+Соответствующие изменения должны происходить при выборе специального пункта меню.
+Создать как минимум три расширения такого типа.
+
+\subsection{Проект gui}
+
+\lstinputlisting[language=C++]{../gpi_osisp5_lab3/gpi_osisp5_option5/gpi_font.cpp}
+
+\paragraph{} \hspace{0pt}
+
+\textbf{Вывод:} научились использовать dll в QtCreator.
