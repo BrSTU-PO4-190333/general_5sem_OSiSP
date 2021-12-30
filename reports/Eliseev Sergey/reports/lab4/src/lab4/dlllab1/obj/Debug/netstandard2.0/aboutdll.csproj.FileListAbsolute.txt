@@ -78,3 +78,9 @@ C:\Users\Sergei\source\repos\lab4\dlllab1\obj\Debug\netstandard2.0\aboutdll.Asse
 C:\Users\Sergei\source\repos\lab4\dlllab1\obj\Debug\netstandard2.0\aboutdll.csproj.CopyComplete
 C:\Users\Sergei\source\repos\lab4\dlllab1\obj\Debug\netstandard2.0\aboutdll.dll
 C:\Users\Sergei\source\repos\lab4\dlllab1\obj\Debug\netstandard2.0\aboutdll.pdb
+C:\Users\Sergei\OSiSP\reports\Eliseev Sergey\reports\lab4\src\lab4\dlllab1\obj\Debug\netstandard2.0\aboutdll.csprojAssemblyReference.cache
+C:\Users\Sergei\OSiSP\reports\Eliseev Sergey\reports\lab4\src\lab4\dlllab1\obj\Debug\netstandard2.0\aboutdll.csproj.CoreCompileInputs.cache
+C:\Users\Sergei\OSiSP\reports\Eliseev Sergey\reports\lab4\src\lab4\dlllab1\obj\Debug\netstandard2.0\aboutdll.AssemblyInfoInputs.cache
+C:\Users\Sergei\OSiSP\reports\Eliseev Sergey\reports\lab4\src\lab4\dlllab1\obj\Debug\netstandard2.0\aboutdll.AssemblyInfo.cs
+C:\Users\Sergei\OSiSP\reports\Eliseev Sergey\reports\lab4\src\lab4\dlllab1\obj\Debug\netstandard2.0\aboutdll.dll
+C:\Users\Sergei\OSiSP\reports\Eliseev Sergey\reports\lab4\src\lab4\dlllab1\obj\Debug\netstandard2.0\aboutdll.pdb
