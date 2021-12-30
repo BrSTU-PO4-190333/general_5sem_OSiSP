@@ -1,0 +1,58 @@
+﻿<Window x:Class="TRIPS_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TRIPS_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="baseGrid">
+        <InkCanvas Name="Ink" >
+            <InkCanvas.DefaultDrawingAttributes>
+                <DrawingAttributes/>
+            </InkCanvas.DefaultDrawingAttributes>
+        </InkCanvas>
+
+        <Grid Name="TopPanel" VerticalAlignment="Top" HorizontalAlignment="Left" Width="800" Height="99" Background="Gainsboro" Margin="0,0,-6.4,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="423*"/>
+                <ColumnDefinition Width="377*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontFamily="Arial" FontSize="18" Margin="20, 10, 0, 0" Grid.ColumnSpan="2"><Run Text="Choose color:"/></TextBlock>
+            <ComboBox FontFamily="Arial" FontSize="16" Name="ColorsList" Width="200" Height="30" HorizontalAlignment="Left" Margin="20,32,0,18" SelectionChanged="ColorsList_SelectionChanged">
+
+                <ComboBoxItem Content="Black" FontFamily="Arial" FontSize="16"/>
+                <ComboBoxItem Content="Red" FontFamily="Arial" FontSize="16"/>
+                <ComboBoxItem Content="Orange" FontFamily="Arial" FontSize="16"/>
+                <ComboBoxItem Content="Yellow" FontFamily="Arial" FontSize="16"/>
+                <ComboBoxItem Content="Green" FontFamily="Arial" FontSize="16"/>
+                <ComboBoxItem Content="Cyan" FontFamily="Arial" FontSize="16"/>
+                <ComboBoxItem Content="Blue" FontFamily="Arial" FontSize="16"/>
+                <ComboBoxItem Content="Purple" FontFamily="Arial" FontSize="16"/>
+            </ComboBox>
+
+            <TextBlock Text="Choose mode:" FontFamily="Arial" FontSize="18" Margin="280,10,0,0" Grid.ColumnSpan="2"/>
+
+            <RadioButton Name="DrawingMode" Checked="DrawingModeSelection" Margin="280, 30, 0, 0" FontFamily="Arial" FontSize="12" Content="кисть&#xD;&#xA;" Grid.ColumnSpan="2">
+            </RadioButton>
+
+            <RadioButton Name="DeletingMode" Checked="DeletingModeSelection" Margin="280, 45, 0, 0" FontFamily="Arial" FontSize="12" Content="удалить объект&#xD;&#xA;" Grid.ColumnSpan="2">
+            </RadioButton>
+
+            <RadioButton Name="FormatingMode"  Checked="FormatingModeSelection" Margin="280, 60, 0, 0" FontFamily="Arial" FontSize="12" Content="ластик" Grid.ColumnSpan="2">
+            </RadioButton>
+
+            <TextBlock FontFamily="Arial" FontSize="18" Margin="34.6,10,0,0" Grid.Column="1"><Run Text="Choose width:"/><InlineUIContainer>
+                </InlineUIContainer></TextBlock>
+            <Button x:Name="Btn_Save" Content="Сохранить" Click="Btn_Save_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Width="71" Height="35" Margin="0,0,10,0" Grid.Column="1"/>
+            <Slider Name="ChooseWidth" Maximum="100" Value="1" TickPlacement="Both" TickFrequency="10" Margin="76.6,35,100,0" Width="200" Foreground="Black" ValueChanged="BrushWidthChange" Grid.Column="1"/>
+
+
+            <Button Name="CloseWindow" Width="40" Height="40" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Gainsboro" Click="CloseWindow_Click" Grid.Column="1" Margin="0,0,10,0">
+                <Image Source="https://emojio.ru/images/apple-b/274c.png" Height="11" Width="20"></Image>
+            </Button>
+            <Button x:Name="Btn_About" Content="О&#xD;&#xA; программе" Click="Btn_About_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Width="71" Height="35" Margin="0,0,10,30" Grid.Column="1"/>
+
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+C:\Users\Sergei\source\repos\lab4\ClientLayer\bin\Debug\netstandard2.0\ClientLayer.deps.json
+C:\Users\Sergei\source\repos\lab4\ClientLayer\bin\Debug\netstandard2.0\ClientLayer.dll
+C:\Users\Sergei\source\repos\lab4\ClientLayer\bin\Debug\netstandard2.0\ClientLayer.pdb
+C:\Users\Sergei\source\repos\lab4\ClientLayer\obj\Debug\netstandard2.0\ClientLayer.csprojAssemblyReference.cache
+C:\Users\Sergei\source\repos\lab4\ClientLayer\obj\Debug\netstandard2.0\ClientLayer.csproj.CoreCompileInputs.cache
+C:\Users\Sergei\source\repos\lab4\ClientLayer\obj\Debug\netstandard2.0\ClientLayer.AssemblyInfoInputs.cache
+C:\Users\Sergei\source\repos\lab4\ClientLayer\obj\Debug\netstandard2.0\ClientLayer.AssemblyInfo.cs
+C:\Users\Sergei\source\repos\lab4\ClientLayer\obj\Debug\netstandard2.0\ClientLayer.dll
+C:\Users\Sergei\source\repos\lab4\ClientLayer\obj\Debug\netstandard2.0\ClientLayer.pdb
